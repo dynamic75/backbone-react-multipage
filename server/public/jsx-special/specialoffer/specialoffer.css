@@ -1,0 +1,52 @@
+/* custom offer component styles */
+
+
+.specialoffer {
+	margin-bottom: 10px;
+	background-color: #ebebeb;
+	padding: 10px;	
+}
+
+.specialoffer .title {
+	font-size: 22px;
+	margin-bottom: 8px;
+	color: #636363;
+}
+
+.specialoffer figure {		
+}
+
+figure.wide {
+	width: 500px;
+	float: right;
+}
+figure.narrow {
+	width: 370px;
+	float: left;
+}
+
+.specialoffer figcaption {
+	background: #fff;
+	padding: 10px;
+	box-sizing: border-box;	
+}
+
+.specialoffer figcaption strong {
+	color: #de1d2e;
+}
+
+.specialoffer .itemname {
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.specialoffer .learnmore {
+	display: inline-block;
+	margin: 10px 0 0;
+	text-decoration: underline;
+}
+
+.specialoffer .description, .specialoffer .learnmore {
+	font-size: 14px;
+	margin: 0;
+}

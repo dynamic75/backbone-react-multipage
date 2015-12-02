@@ -1,0 +1,94 @@
+/* main content css */
+
+.col-left {
+	float: left;
+	width: 700px;
+	overflow: hidden;
+}
+
+.col-right {
+	/*make full height*/
+	padding-bottom: 999px;
+	margin-bottom: -999px;
+
+	float: right;
+	width: 198px;
+    min-height: 565px;    
+    position: relative;
+    z-index: 10;
+    -webkit-box-shadow: -9px 0px 13px 0px rgba(188,188,188,.8);
+	-moz-box-shadow: -9px 0px 13px 0px rgba(188,188,188,.8);
+	box-shadow: -9px 0px 13px 0px rgba(188,188,188,.8);
+}
+#homepage .col-right {
+	-webkit-box-shadow: -9px 0px 13px 0px rgba(90,90,90,.8);
+	-moz-box-shadow: -9px 0px 13px 0px rgba(90,90,90,.8);
+	box-shadow: -9px 0px 13px 0px rgba(90,90,90,.8);
+}
+
+
+.main-content  {
+	width: 100%;
+	margin-bottom: 17px;
+	overflow: hidden;
+	/* simulate column background for form */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(left, #ffffff 697px, #ffffff 697px, #ebebeb 697px);
+	background: -webkit-gradient(linear, left, right, color-stop(697px,#ffffff), color-stop(697px,#ebebeb), color-stop(697px,#ebebeb)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #ffffff 697px,#ffffff 697px,#ebebeb 697px);
+	background: -o-linear-gradient(left, #ffffff 697px,#ffffff 697px,#ebebeb 697px);
+	background: -ms-linear-gradient(left, #ffffff 697px,#ebebeb 697px,#ebebeb 697px); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ebebeb',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(left, #ffffff 697px,#ffffff 697px,#ebebeb 697px);
+}
+
+.main-content > .row {
+	border: 1px solid #cecece;
+}
+
+.main-content .title {
+	font-size: 24px;
+}
+.main-content .subtitle {
+	color: #8a8a8a;
+	display: block;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: 100;
+	margin-bottom: 30px;
+}
+.main-content .title, .main-content .subtitle {
+	padding-left: 15px;
+}
+
+.main-content .goto:after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #7d7d7d;
+    top: -2px;
+    position: relative;
+    vertical-align: middle;
+}
+.main-content .grid figure, .gallery-content .gallery-thumb {
+	float: left;
+	width: 200px;
+	margin-right: 15px;
+}
+.main-content .grid figure:last-of-type {
+	margin-right: 0;
+}
+.main-content .grid figcaption {	
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    letter-spacing: -0.7px;
+}
+
+.additional-services figcaption {
+	margin-top: 10px;
+}

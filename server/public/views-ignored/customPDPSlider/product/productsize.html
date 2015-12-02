@@ -1,0 +1,16 @@
+Size: 
+<% if (colorwayarr.length > 1) { %>
+	<select class="stnly-sizeSelector isNotIe" style="background: url(images/pdppage/select_down_arrow.png) 86% / 12px no-repeat #fff;">
+	<% _.each( colorwayarr, function(obj, idx) { %>
+		<% if (obj.availability === true) { %>
+			<option data-stnly-size="<%= obj.sizelabel %>" data-sizeid="<%= obj.sizeid %>"><%= obj.sizelabel %></option>
+		<% } %>
+	<% }); %>
+	</select>
+<% } else { %>
+	<% _.each( colorwayarr, function(obj, idx) { %>
+		<% if (obj.availability === true) { %>
+			<div class="stnly-size-panel"><div class="stnly-size-container"><div class="stnly-size stnly-size-available" data-stnly-size="<%= obj.sizelabel === undefined ? 'none' : obj.sizelabel %>" data-sizeid="<%= obj.sizeid %>"><%= obj.sizelabel === undefined ? 'none' : obj.sizelabel %></div></div>
+		<% } %>
+	<% }); %>
+<% } %>

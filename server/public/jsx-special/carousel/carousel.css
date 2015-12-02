@@ -1,0 +1,33 @@
+/* carousel css */
+
+
+.c-wrapper {
+	position: relative;
+}
+
+.c-wrapper .arrow {
+	background: none;
+	position: absolute;
+	z-index: 10;
+	border: none;
+	width: 45px;
+	height: 89px;
+	top: 250px;
+	cursor: pointer
+}
+
+.c-wrapper .slick-prev {
+	left: 15px;
+}
+
+.c-wrapper .slick-next {
+	right: 15px;	
+}
+
+.c-wrapper  .custom-decor-button {
+	position: absolute;
+	top: 17px;
+	left: 22px;
+	z-index: 100;
+}
+

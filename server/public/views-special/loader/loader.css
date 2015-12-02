@@ -1,0 +1,16 @@
+
+#loadercontainer #loader {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.3);
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+#loadercontainer .loadingmessage { top: 50%; position: relative; }
+
+#loadercontainer .macys { margin: -65px auto; }
+
+#loadercontainer .spinner { margin: 20px auto 0; }

@@ -1,0 +1,103 @@
+
+/*  essential site wide css, please don't delete */
+body, html, A, IMG { padding: 0; border: 0; margin: 0; color: #969696; }
+#appContainer, #pagecontainer { position: relative; }
+#appContainer { margin: 0 auto; overflow: hidden; width: 900px;}
+/* */
+
+
+
+
+
+/* very useful css, but edit at will  */
+#appContainer IMG { display: block; }
+/*#appContainer A { display: block; }*/
+
+
+
+
+
+/* very useful css, helps with responsive, but edit at will  */
+#appContainer IMG { width: auto; max-width: 100%; }
+
+
+
+
+/*   non essential css   */
+
+
+/* RESETS */
+
+a {
+  text-decoration: none;
+}
+
+ul,li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p, figure, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  font-weight: 400;
+}
+
+.row {
+  clear: both;
+}
+.row:after {
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+
+/*   non essential css   */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  }
+
+.center {
+  text-align: center;
+}
+
+.left {
+  float: left;  
+}
+.right {
+  float: right;
+}
+
+
+#pagecontainer { padding: 0; }
+.codestyle {
+    font-family: courier, monospace;
+    color: #555;
+    margin: 0 5px;
+}
+
+body {
+    font-family: helvetica, arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+

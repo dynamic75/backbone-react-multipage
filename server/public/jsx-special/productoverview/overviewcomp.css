@@ -1,0 +1,29 @@
+/* overviewcomp.css */
+
+
+.overview-content {
+    padding: 30px;
+    color: #7d7d7d;
+}
+
+.overviewgrid {
+	margin-bottom: 30px;
+}
+.overviewgrid figure {
+    margin-right: 17px;
+    width: 200px;
+}
+
+.overviewgrid a {
+	text-decoration: none;
+	color: #7d7d7d;
+	white-space: pre-wrap;    
+}
+
+.overviewgrid a span {
+	work-wrap: break-word;
+}
+
+.overviewgrid sup {
+	font-size: 10px;
+}

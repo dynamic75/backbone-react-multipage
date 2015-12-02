@@ -1,0 +1,13 @@
+/* motorization-content css */
+
+
+.motorization-content {
+	padding: 37px 15px 40px 20px;
+}
+
+.motorization-content figcaption a {
+	text-transform: uppercase;
+	padding-top: 5px;
+	display: block;
+	cursor: pointer;
+}

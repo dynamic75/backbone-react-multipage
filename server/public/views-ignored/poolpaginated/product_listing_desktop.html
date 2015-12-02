@@ -1,0 +1,95 @@
+<!--
+    Fixed height product listing template
+    Design standardized by Chris Crowl during Holiday Gift Guide 2014
+    376px high
+    172px wide
+    15 margin all around yields 30px gap between pool items
+-->
+
+
+<div class="productListing"
+    <% if (item.containerClass!='offer') { %>
+        entryId="<%= item.entryId %>"
+    <% } %>
+
+    productId="<%= item.pfeed_id %>"
+
+    <% if (item.containerClass=='offer') { %>
+        tracking=" <%= item.tracking %>"
+    <% } %>
+
+    <% if (item.mostVoted===true) { %>
+        tracking="topgift"
+    <% } %>
+
+    class="product
+
+        <% if (item.mostVoted) { %>
+            topgifted
+        <% } %>
+        <% if (item.containerClass) { %>
+        containerClass
+        <% } %>"
+    >
+    <div class="product_image">
+       
+            <div class="quickview">
+                <a href="javascript:void(0)" entryId="<%= item.entryId %>" productId="<%= item.pfeed_id %>" track="quickview" style="background: url('randomDirectory/images/qv-button.png');">Quick View</a>
+            </div>
+             <a entryId="<%= item.entryId %>"
+           productId="<%= item.pfeed_id %>"
+           href="<%= item.pfeed_url %>"
+        <%if (item.containerClass=='offer') { %>
+        target="<%= item.target %>"
+        <% } else { %>
+        target="_blank"
+        <% } %>
+        <% if (item.mostVoted) { %>track="topgifted"<% } %>
+
+        >
+            <img class="image"
+                 src="<%= String(item.image_fullImage).replace(/wid=(.*?)&/gi, 'wid=288&') %>" />
+        </a>
+
+
+
+        <%if (item.pfeed_productvideo != '') { %>
+        <div
+                entryId="<%= item.entryId %>"
+                productId="<%= item.pfeed_id %>"
+                onclick="app.insertProductVideo({id:'<%= item.pfeed_productvideo %>' })"
+                class="product_video_btn product_button_base">
+            <div class="arrow-right"></div>
+        </div>
+        <% } %>
+
+    </div>
+    <div class="label">
+        <a href="<%= item.pfeed_url %>" target="_blank">
+            <%= item.label %>
+        </a>
+    </div>
+
+    <% if (app.status.isInternational) { %>
+        <% if (item.pfeed_price1) { %>
+            <p class="price price1"><%= skShipping.getLocalizedPriceEx(item.pfeed_price1) %></p>
+        <% } %>
+        <%if (item.pfeed_price2) { %>
+            <p class="price price2"><%= skShipping.getLocalizedPriceEx(item.pfeed_price2) %></p>
+        <% } %>
+        <%if (item.pfeed_price3) { %>
+            <p class="price price3"><%= skShipping.getLocalizedPriceEx(item.pfeed_price3) %></p>
+        <% } %>
+        <% } else { %>
+        <% if (item.pfeed_price1) { %>
+            <p class="price price1"><%= item.pfeed_price1 %></p>
+        <% } %>
+        <% if (item.pfeed_price2) { %>
+            <p class="price price2"><%= item.pfeed_price2 %></p>
+        <% } %>
+        <% if (item.pfeed_price3) { %>
+            <p class="price price3"><%= item.pfeed_price3 %></p>
+        <% } %>
+    <% } %>
+
+</div>

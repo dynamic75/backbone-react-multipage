@@ -1,0 +1,63 @@
+/* gallery component css */
+
+.gallerycomponent {
+	border: 1px solid #ebebeb;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.gallerycomponent .backImage {
+	position: relative;
+	z-index: 50
+}
+
+.gallerycomponent .title {
+	font-size: 22px;
+	margin-bottom: 8px;
+	font-weight: none;
+	color: #636363;
+}
+.gallerycomponent .title a {
+	color: #636363;
+	text-decoration: underline;
+}	
+
+
+.gallerycomponent img {
+	margin: 0 auto;
+}
+
+.gallerycomponent .gallery-link {
+	position: absolute;
+	width: 300px;
+	opacity: .4;
+	top: 40px;
+}
+
+.gallerycomponent #shutters {
+	left: 5px;
+	top: 50px;
+	width: 300px;
+	height:	260px;
+	z-index: 100;
+	/*background-color: lightblue;*/
+}
+.gallerycomponent #blinds {
+	top: 60px;
+	left: 295px;
+	width: 300px;
+	height: 250px;
+	z-index: 105;
+	/*background-color: lightgreen;*/
+}
+.gallerycomponent #shades {
+	left: 590px;
+	height: 270px;
+	z-index: 100;
+	/*background-color: orange;*/
+}
+
+.gallery-link {
+	background-color: rgba(255,0,0,0.0);
+}

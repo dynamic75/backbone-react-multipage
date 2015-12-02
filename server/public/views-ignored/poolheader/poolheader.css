@@ -1,0 +1,55 @@
+#poolheader {
+    position: relative;
+    width: 640px;
+    height: 427px;
+}
+
+.finderPage #shop-content {
+    height: 427px;
+}
+
+
+/* *** *** BEGIN CUSTOM HEADER NAV ELEMENT STYLES *** *** */
+
+#poolheader .arrow{
+    position: absolute;
+    width: 57px;
+    height: 112px;
+    top: 160px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+#poolheader .arrow.right {
+    right: 0;
+}
+
+.indicators{
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.indicator{
+    position: relative;
+    display: inline-block;
+    color: #000;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
+    margin-right: 7px;
+    padding: 2px 0 2px 0;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.one, .two, .three, .four{
+    padding: 0 7px 0 7px;
+}
+
+#poolheader .selected{
+    background-color: black;
+    color: white;
+}
+
+/* *** *** END CUSTOM HEADER NAV ELEMENT STYLES *** *** */

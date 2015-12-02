@@ -1,0 +1,40 @@
+/* offers-content css */
+
+.offers-content {
+	padding: 30px 10px 10px;
+	width: 658px;
+}
+
+.offers-content .specialoffer {
+	background-color: transparent;
+	padding: 0;
+	border: 1px solid #ebebeb;
+}
+
+.offers-content .title, .offers-content .subtitle {
+	padding-left: 30px;
+}
+
+#offerspage .offers-content img {
+	display: inline-block;
+}
+
+.offers-content .specialoffer figcaption {	
+	width: 330px;
+	padding: 20px 20px 0;
+}
+
+.offers-content .specialoffer .itemname, .offers-content strong {
+	font-size: 22px;
+	margin: 0;
+}
+
+.offers-content .specialoffer .description{
+	margin: 7px 0 0;
+	color: #555;
+}
+
+.offers-content .specialoffer .legal {
+	font-size: 11px;
+	margin-top: 5px;	
+}

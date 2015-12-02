@@ -1,0 +1,63 @@
+.list-scrollable {
+	height: 100%;
+	position: relative;
+}
+.list-wrapper {
+	float: left;
+	margin: 20px 6px;
+}
+
+.list-view {
+	overflow-y: hidden;
+	overflow-x: hidden;
+	width: 100%;
+	position: relative;
+	font-family: "Helvetica", arial, sans-serif;
+}
+
+.primaryview-cont {
+	background-color: yellow;
+}
+
+.list-cont {
+	height: 278px;
+	width: 227px;
+	margin-bottom: 10px;
+	border: 2px solid rgba(255,255,255,0);
+}
+.list-wrapper.selected .list-cont {
+	border: 2px solid black;
+}
+
+.product-image {
+	width: 220px;
+	margin: 2px auto;
+}
+
+.information {
+	width: 222px;
+}
+
+.customViewsSlider-wrapper .go-right {
+	top: 510px;
+	right: -25px;
+	height: 150px;
+	padding-top: 150px;
+	cursor: pointer;
+	position: absolute;
+}
+.customViewsSlider-wrapper .go-left {
+	top: 510px;
+	left: -25px;
+	height: 150px;
+	padding-top: 150px;
+	cursor: pointer;
+	position: absolute;
+}
+.productAddedIndicator {
+	visibility: hidden;
+	margin-top: 10px;
+}
+.list-wrapper.added .productAddedIndicator {
+	visibility: visible;
+}

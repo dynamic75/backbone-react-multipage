@@ -1,0 +1,38 @@
+<div class="list-scrollable">
+<% _.each(products, function(product, idx) { %>
+	<div class="list-wrapper cursor left clearfix product_<%= product.id %>" data-productid="<%= product.id %>" data-position = "<%= idx %>">
+		<div class="list-cont">
+			<div class="product-image">
+				<img class="productImage" src="http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= product.image %>?bgc=255,255,255&amp;wid=222&amp;qlt=90&amp;layer=comp&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.7,1.0,0.5,0&amp;fmt=jpeg&amp;wid=222">
+			</div>
+
+			
+		</div>
+
+		<div class="information">
+			<div class="product-name">
+				<%= product.name %>
+			</div>
+
+			<div class="price-details margin-top">
+				<div class="regPrice">
+					<% if (!product.iscollection) { %>
+                        Reg: $<%= product.originalPrice %>
+                    <% } %>
+                    
+				</div>
+
+				<div class="salePrice">
+					<% if (product.salePrice) { %>
+						Sale: $<%= product.salePrice %>
+					<% } %>
+				</div>
+			</div>
+		</div>
+
+		<div class="productAddedIndicator">
+			&#10003; Added to Bag
+		</div>
+	</div>
+<% }); %>
+</div>

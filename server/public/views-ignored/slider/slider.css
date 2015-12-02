@@ -1,0 +1,59 @@
+.slidercontainer {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.slider {
+    position: relative;
+    width: 800px;
+    height: 200px;
+    border: solid 10px #000;
+}
+
+.mask {
+    position: relative;
+    width: 800px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slide {
+    width: 800px;
+    height: 200px;
+    background-color: #cc0000;
+    float: left;
+}
+
+.strip_container {
+    position: relative;
+}
+
+.large_number {
+    font-size: 64px;
+}
+
+.slider .arrow {
+    color: #000;
+    background-color: #00cc00;
+
+    position: absolute;
+    width: 57px;
+    height: 112px;
+
+    cursor: pointer;
+}
+
+.slider .arrows {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+.slider .arrow.left {
+    left: -57px;
+}
+
+.slider .arrow.right {
+    right: -57px;
+}

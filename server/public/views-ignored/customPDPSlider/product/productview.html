@@ -1,0 +1,189 @@
+<div class="product-wrapper" data-product-id="<%= product.id %>">
+	<div class="product-container clearfix">
+		<div class="back-btn cursor">&times;</div>
+
+
+            <!--additional images -->
+            <div class="product-additionalProductImage">
+                <div id="product-additionalProductImage-scroller">
+                    <!--additional images are 88px wide-->
+                    <!--set the primary image as one of thumbnails in scroller in able to go back to it-->
+                    <img class="product-additionalProductImage-img product-additionalProductImage-img-selected" src="http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= product.image %>?bgc=255,255,255&amp;wid=88&amp;qlt=90&amp;layer=comp&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.7,1.0,0.5,0&amp;fmt=jpeg&amp;wid=88"/>
+                    <!--add all the rest of the additional images-->
+                    <% _.each( product.addimages, function(addimg, idx) { %>
+                        <img class="product-additionalProductImage-img" src="http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= addimg %>?bgc=255,255,255&amp;wid=88&amp;qlt=90&amp;layer=comp&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.7,1.0,0.5,0&amp;fmt=jpeg&amp;wid=88"/>
+                    <% }) %>
+                </div>
+                <!--if there are more than 3 additional images add scroller - up and down-->
+                <% if (product.addimages.length > 3) { %>
+                    <div class="product-additionalProductImage-more product-additionalProductImage-more-up"
+                            style="background-image: url(randomDirectory/images/pdppage/up_arrow.png)">
+                    </div>
+                    <div class="product-additionalProductImage-more product-additionalProductImage-more-down"
+                         style="background-image: url(randomDirectory/images/pdppage/down_arrow.png)"></div>
+                <% } %>
+            </div>
+
+
+
+            <!--main product image area-->
+			<div class="productImage left">
+                <% if ( product.iscollection ) { %>
+                    <img class="productImage-img" src="http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= product.image %>?bgc=255,255,255&amp;qlt=90&amp;layer=comp&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.7,1.0,0.5,0&amp;fmt=jpeg&amp;wid=310">
+                <% } else { %>
+                    <% if (product.colormap[0].hasOwnProperty('upcprimaryimage')) { %>
+                        <% if (product.colormap[0].hasOwnProperty('swatchimage') ) { %>
+                            <img class="productImage-img" src="http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= product.colormap[0].upcprimaryimage.imagename %>?bgc=255,255,255&amp;qlt=90&amp;layer=comp&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.7,1.0,0.5,0&amp;fmt=jpeg&amp;wid=310">
+                        <% } %>
+                    <% } else { %>
+                        <img class="productImage-img" src="http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= product.image %>?bgc=255,255,255&amp;qlt=90&amp;layer=comp&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.7,1.0,0.5,0&amp;fmt=jpeg&amp;wid=310">
+                    <% } %>
+                <% } %>
+			</div>
+
+		
+
+		<div class="productDescription left">
+            <div class="productName margin-top">
+                <%= product.name %> <span class="productName-webid">Web ID: <%= product.id %></span>
+            </div>
+
+            <!--ratings-->
+            <% if (product.master.rating != 'none') { %>
+                <div class="product-rating-wrap">
+                        <% if ( !product.iscollection ) { %>  <!--single product rating or member page rating-->
+                            <% if (product.rating > 0) { %>
+                                <a href="http://www1.macys.com/shop/product/?ID=<%= product.id %>#BVRRWidgetID" target="_blank"> <!--link to the reviews on MCOM-->
+                                    <div class="product-rating" style="background: url(randomDirectory/images/pdppage/stars-grey.png)"> <!--grey/empty stars-->
+                                        <div class="product-rating-stars" style="background: url(randomDirectory/images/pdppage/stars-red.png);
+                                            width: <%= (product.rating/5)*110 %>px;"> <!--calculate the width of red star container based on average review-->
+                                            <%= product.rating %>
+                                        </div>
+                                    </div>
+                                </a>
+                            <% } %>
+                        <% } else { %>  <!-- master page rating-->
+                            <% if (product.master.rating > 0) { %>
+                                <a href="http://www1.macys.com/shop/product/?ID=<%= product.id %>#BVRRWidgetID"> <!--link to the reviews on MCOM-->
+                                    <div class="product-rating" style="background: url(randomDirectory/images/pdppage/stars-grey.png)"> <!--grey/empty stars-->
+                                        <div class="product-rating-stars" style="background: url(randomDirectory/images/pdppage/stars-red.png);
+                                            width: <%= (product.master.rating/5)*110 %>px;"> <!--calculate the width of red star container based on average review-->
+                                            <%= product.master.rating %>
+                                        </div>
+                                    </div>
+                                </a>
+                            <% } %>
+                        <% } %>
+                    <!--member pages dont have number of reviews-->
+                    <% if ( product.iscollection || !product.incollection ) { %>
+                        <a href="http://www1.macys.com/shop/product/?ID=<%= product.id %>#BVRRWidgetID" target="_blank">
+                            <div class="product-rating-num">(<%= product.master.ratingnum %> reviews)</div>
+                        </a>
+                    <% } %>
+                </div>
+            <% } %>
+
+            <div class="product-price">
+                <% if ( !product.iscollection ) { %>
+                    <!--product price for single/member items-->
+                    <span class="regPrice <% if (product.salePrice) { %>regPrice-strikethrough<% } %>">$<%= parseFloat(product.originalPrice).toFixed(2) %></span>
+                    <% if (product.salePrice) { %>
+                      <!--if sale price show strike through and new price-->
+                      <span class="salePrice">&nbsp;&nbsp;&nbsp;NOW: $<%= parseFloat(product.salePrice).toFixed(2) %></span>
+                    <% } %>
+                <% } else { %>
+                    <!--this is not a range of original price as collections like leggings dont have a range of original prices, using sale/retail range-->
+                    <span>$<%= product.pricerange %></span>
+                <% } %>
+            </div>
+
+			<div class="stnly-colorName margin-top">
+				Color: <span class="color"><%= product.colormap[0].color %></span>
+			</div>
+
+
+            <!--color/pattern swatches-->
+            <!--if product has more than 16 swatches turn into a scroller for the rest-->
+            <!--diff from MCOM -> in MCOM quickview, member items are limited to only 7 swatches in list area-->
+            <!--diff from MCOM -> in MCOM collections and member items are not buyable from quickview, must go to PDP page-->
+
+			<div class="margin-top product-swatches <% if (product.colormap.length > 16 ) { %>product-swatches-hasmore<% } %>">
+			<% _.each(product.colormap, function(obj, idx) { %>
+				<% if (obj.hasOwnProperty('upcprimaryimage')) { %>
+					<% if (obj.hasOwnProperty('swatchimage') ) { %>
+						<div track="pdp.swatch" class="stnly-swatch-outer-box <%= obj.swatchimage.length 
+                        === 0 ? "none" : obj.swatchimage %>" data-colorwayid="<%= obj.colorwayid %>" data-stnly-colorname="<%= obj.color %>" data-image-name="<%= obj.upcprimaryimage.imagename %>">
+							<div class="stnly-swatch" style="background-image:url(http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= obj.swatchimage.imagename %>?wid=35&amp;fmt=jpeg);"></div>
+						</div>
+					<% } %>
+				<% } else { %>
+					<% if (obj.hasOwnProperty('swatchimage') ) { %>
+						<div track="pdp.swatch" class="stnly-swatch-outer-box <%= obj.swatchimage.length 
+                        === 0 ? "none" : obj.swatchimage %>" data-colorwayid="<%= obj.colorwayid %>" data-stnly-colorname="<%= obj.color %>" data-image-name="<%= obj.hasOwnProperty('upcprimaryimage') ? obj.upcprimaryimage.imagename : 'none' %>">
+							<div class="stnly-swatch" style="background-image:url(http://slimages.macys.com/is/image/MCY/products/5/optimized/<%= obj.swatchimage.imagename %>?wid=35&amp;fmt=jpeg);"></div>
+						</div>
+					<% } %>
+
+				<% } %>
+			<% }); %>
+                <!-- this is here for padding in IE - for scroller -->
+                <div class="spacer">&nbsp;</div>
+			</div>
+
+            <!--if there are more than 16 swatches add see more text-->
+            <% if (product.colormap.length > 16 ) { %>
+                <div class="product-swatches-seemore">see more</div>
+            <% } %>
+
+
+            <!--don't show sizes or quantity or buttons for collections; collection is not buyable -->
+            <% if ( !product.iscollection ) { %>
+                <div track="pdp.size" class="stnly-sizeHelper margin-top">
+
+                </div>
+
+                <div class="stnly-margin-element margin-top">
+                    Quantity:
+                    <select track="pdp.size" class="stnly-qtySelector isNotIe" style="background: url(images/pdppage/select_down_arrow.png) 86% / 12px no-repeat #fff;">
+
+                        <!-- switch to change between different views -->
+                        <% for (var i = 1; i <= product.maxQuantity; i++) { %>
+                        <option value="<%= i %>"
+                        <% if (i === 1) { %>
+                        'selected'
+                        <% } else { %>
+                        =""
+                        <% } %>
+                        ><%= i %></option>
+                        <% }; %>
+                    </select>
+                </div>
+
+                <div class="margin-top messages">
+                    
+                </div>
+
+                <div class="margin-top">
+                    <div class="addToBag-button cursor product-btn btn-red" track="pdp.addtobag">
+                        add to bag <img src="randomDirectory/images/pdppage/icon-bag.png"/>
+                    </div>
+
+                    <div class="addtolist-button cursor product-btn btn-gray" track="pdp.addtolist">
+                        add to list
+                    </div>
+
+
+                </div>
+            <% } %>
+
+
+            <div class="margin-top product-description"><%= product.description %></div>
+
+            <!--link to MCOM product page-->
+            <a href="http://www1.macys.com/shop/product/?ID=<%= product.id %>" class="product-fulldetails" target="_blank">
+                view full product details
+            </a>
+
+		</div>
+	</div>
+</div>

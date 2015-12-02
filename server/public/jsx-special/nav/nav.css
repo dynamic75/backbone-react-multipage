@@ -1,0 +1,76 @@
+
+#navcontainer {
+    padding: 20px 0 0;
+    margin-bottom: 17px;
+    font-family: helvetica, arial, sans-serif;
+}
+
+#navcontainer .home-link {
+    color: #333;
+    font-size: 15px;
+}
+#navcontainer .home-link h1 {    
+    font-weight: 100;
+    font-size: 24px;
+    padding-top: 25px;
+    margin: 0;
+}
+
+#navcontainer .navitem {
+    color: #555;
+    float: left;
+    font-size: 12px;
+    padding-right: 15px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+#navcontainer nav .row .navitem:last-child {
+    padding-right: 0;
+}
+#navcontainer .row:nth-child(2) .navitem {
+    padding-right: 21px;
+}
+
+#navcontainer .navitem:after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #333;    
+}
+
+#navcontainer .navitem:hover {
+    text-decoration: underline;
+    color: #555;
+}
+#navcontainer .navitem.active {
+    text-decoration: underline;
+}
+
+#navcontainer .col {
+    border-right: 1px solid #898989;
+    min-height: 75px;
+    padding: 0 12px;
+    float: left;
+}
+#navcontainer .col:last-child {
+    border: none;
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+#navcontainer nav {
+    padding-top: 20px;
+}
+
+.brand-category img {
+    padding-top: 10px;
+}
+
+
+
+

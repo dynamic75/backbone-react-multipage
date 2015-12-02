@@ -1,0 +1,436 @@
+#poolproducts {
+    /* set a min height on container so footer elements dont jump about shit loads */
+    min-height: 600px;
+}
+
+/*
+.products{
+    width: 100%;
+    margin: 0 auto 0 auto;
+    position: relative;
+    left: 8px;
+}
+*/
+
+#poolproducts{
+    width: 100%;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+
+.product{
+    position: relative;
+    width: 164px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 6px 6px 24px 6px;
+    font: 11px Verdana, Arial;
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+.emptypool {
+    position: relative;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #666;
+    text-align: center;
+    width: 80%;
+    margin: 60px auto 0;
+}
+
+.marketingtilecontainer {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.marketingtile img {
+    width: 100%;
+}
+
+.product.hasPromotions .bonusOffers {
+    display: block;
+}
+
+.product .bonusOffers {
+    padding-top: 10px;
+    background: #ffffff;
+    color: #cc0000;
+    font-weight: bold;
+    border-top: 1px solid #efefef;
+    margin-top: 10px;
+    position: relative;
+    display: none;
+    cursor: pointer;
+}
+
+.product .bonusOffers .offer {
+    font-weight: normal;
+    color: #cc0000;
+    cursor: auto;
+    padding: 5px;
+}
+
+.product .price {
+    margin: 2px 0;
+}
+
+.product .votes {
+    margin: 2px 0;
+}
+
+.product .giftListRow {
+    cursor: pointer;
+}
+
+.product.inWishlist .giftListRow {
+    display: none;
+}
+
+.product .giftListRow2 {
+    display: none;
+    color: #999;
+}
+
+.product.inWishlist .giftListRow2 {
+    display: block;
+}
+
+.product .giftListRow, .product .giftListRow2 {
+    font-weight: bold;
+}
+
+.product .quickview {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0;
+    height: 26px;
+    line-height: 26px;
+    left: 50%;
+    bottom: 8px;
+    margin-left: -44px;
+    width: 88px;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(255,255,255,.9);
+    -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.5);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-repeat: no-repeat;
+    /*background-image: url('images/quickview_trans.png');*/
+    background-position: center center;
+    -webkit-transition: opacity 0.5s;  /* For Safari 3.1 to 6.0 */
+    transition: opacity 0.5s;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.product:hover .quickview{
+    opacity: 1;
+}
+
+.product .product_image {
+    width: 162px;
+    border: 1px solid #c4c4c4;
+    position: relative;
+    overflow: hidden;
+}
+
+.product .image {
+    width: 162px;
+    display: block;
+}
+
+.product .moreColors {
+    text-align: center;
+    background: black;
+    color: white;
+    font: 10px Arial;
+    text-transform: uppercase;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: bold;
+}
+
+.product A {
+    text-decoration: none;
+}
+
+.product .votingRow {
+    padding-top: 5px;
+    font-family: Conv_ITCAvantGardeStd-Md, Arial;
+    position: relative;
+    cursor: pointer;
+}
+
+.product .votingRow{
+    color: #000000;
+    font-size:12px;
+    font-weight: bold;
+}
+
+.product.voted .votingRow .button {
+    color: #999999;
+}
+
+.product.voted .votingRow {
+    cursor: default;
+}
+
+.product .voteCount{
+    color: #000000;
+    font-size: 9px;
+    white-space: nowrap;
+    position: absolute;
+    top: 7px;
+    font-family: verdana, arial;
+    font-weight: normal;
+}
+
+.product .label {
+    /*clear:both;*/
+    padding-top: 8px;
+}
+
+.product .label A {
+    color: black;
+    text-decoration: none;
+}
+
+.product .price1 {
+    font-weight: bold;
+}
+
+.product .price2 {
+    font-weight: bold;
+}
+
+.product .price3 {
+    font-weight: bold;
+    color: red;
+}
+
+.price3{
+    color: red;
+}
+
+.product .voteButton.active {
+    /*background: url('images/pool/button_lovelist.png') center 0 no-repeat;*/
+    cursor: pointer;
+}
+
+.product .voteButton {
+    /*background: url('images/pool/button_lovelist.png') center -26px no-repeat;*/
+    width: 27px;
+    height: 26px;
+    display: inline-block;
+}
+
+.product .buttons {
+    margin: 6px 0 0 0;
+}
+
+/* **************************************** */
+/* Voting and votes styling for normal pool */
+/* **************************************** */
+
+.product .votes {
+    margin: 3px 0;
+    display: inline-block;
+}
+
+.pdpreviews {
+    position: relative;
+    float: right;
+    top: 3px;
+}
+
+.pdpreviews .rating {
+    /*background: url('images/pool/star-10.png') 0 0 repeat-x;*/
+}
+
+.pdpreviews .rating {
+    display: inline-block;
+    width: 55px;
+    height: 10px;
+    line-height: 0;
+}
+
+.pdpreviews .rating span {
+    /*background: url('images/pool/star-10.png') 0 -20px repeat-x;*/
+    display: inline-block;
+    height: 10px;
+    line-height: 0;
+}
+
+.stars{
+    position: absolute;
+}
+
+.star-rating-fill{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 13px;
+    /*background-image: url('images/pool/new_stars_full.gif');*/
+    background-repeat: no-repeat;
+}
+
+.reviews .starratings .rating{
+    font-weight: bold;
+    float: right;
+}
+
+.numreviews{
+    margin:0 0 10px 0;
+    font-family: Avenir, sans-serif;
+}
+
+/* ****************************************************** */
+/* top gifted styles start here */
+/* ****************************************************** */
+
+.product.topgifted {
+    background-color: #cc0000;
+    /*background: url('images/pool/topgifted.png') top center no-repeat;*/
+    background-size: contain;
+    margin: 6px 0 0 0;
+    padding: 82px 15px 15px 15px;
+}
+
+.product.topgifted .product_image {
+    width: 134px;
+    margin-top: 10px;
+}
+.product.topgifted .image,
+.product.topgifted .label{
+    width: 134px;
+}
+
+.product.topgifted .price,
+.product.topgifted .votes,
+.product.topgifted .pdpreviews,
+.product.topgifted .reviews{
+    display: none;
+}
+
+.product.topgifted .label{
+    height: 40px;
+    overflow: hidden;
+}
+
+.product.topgifted .label A {
+    color: #fff;
+}
+
+.addtobag,
+.pinit{
+    cursor: pointer;
+}
+
+/* ****************************************************** */
+/* mobile styles */
+/* ****************************************************** */
+.mobile .product{
+    margin: 0 0 33px 20px;
+    padding-top: 30px;
+}
+
+.buynow{
+    width: 288px;
+    height: 65px;
+    background-color: #000000;
+    color: #ffffff;
+    font: 28px Verdana, Arial, sans-serif;
+    line-height: 65px;
+    text-align: center;
+    margin-top: 26px;
+    display: none;
+}
+
+.finderPage.mobile .buynow{
+    display: block;
+}
+
+.finderPage.mobile .product,
+.finderPage.mobile .product .product_image,
+.finderPage.mobile .product .product_image .image{
+    width: 288px;
+}
+
+.finderPage.mobile .product .product_image .image {
+    height: 352px;
+}
+
+.finderPage.mobile .product .reviews,
+.finderPage.mobile .product .votes,
+.finderPage.mobile .product .pdpreviews,
+.finderPage.mobile .product .buttons{
+    display: none;
+}
+
+.finderPage.mobile .product .product_image .image{
+    overflow: hidden;
+}
+
+.finderPage.mobile .product .label{
+    font: 22px "Arial", "Verdana";
+    clear: both;
+    padding-top: 8px;
+    padding-bottom: 16px;
+}
+
+.finderPage.mobile .product .label a{
+    color: black;
+    text-decoration: none;
+}
+
+.finderPage.mobile .product .price1,
+.finderPage.mobile .product .price2,
+.finderPage.mobile .product .price3{
+    font: 22px "Arial", "Verdana";
+    font-weight: bold;
+}
+
+.footerpoolmobile {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.loadmore, .backtotop{
+    width: 304px;
+    height: 88px;
+    background-color: #505050;
+    color: #ffffff;
+    font: 28px Verdana, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 88px;
+    text-align: center;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(204,204,204,1);
+    box-shadow: 0px 3px 5px 0px rgba(204,204,204,1);
+    display: none;
+}
+
+/* *** *** END WEAR TO WORK AND BACK TO TOP STYLES *** *** */
+
+.loadmore, .backtotop{
+    display: inline-block;
+}
+
+.wear-to-work {
+    padding-top: 30px;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,11 @@
+.finderPage#breakingbad img {
+    max-width: 300px;
+    width: 100%;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+
+.finderPage#breakingbad .panel {
+    clear: both;
+}

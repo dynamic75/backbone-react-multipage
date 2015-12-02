@@ -1,0 +1,4 @@
+
+- move the old version into the old folder
+
+- don't forget to update the grunt file with the new filename
